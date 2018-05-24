@@ -2,6 +2,24 @@
     height:500px;
     border:1px solid gray;
 }
+
+#screenPlace {
+    height:500px;
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    width:91%;
+    float:left;
+}
+
+.slider img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.slider a{
+    height:500px;
+}
 #leftArrow,#rightArrow{
     background-image: url(../images/arrow-left.png);
     background-size: 50px 300px;
@@ -19,4 +37,17 @@
 #rightArrow{
     transform:scaleX(-1);
     float:right;
+}
+
+.thumb {
+    width:130px;
+    height:130px;
+    display:inline-block;
+    margin-right:20px;
+    /*border:1px solid lightgrey;*/
+}
+
+.thumb img{
+    max-height:100%;
+    max-width: 100%;
 }

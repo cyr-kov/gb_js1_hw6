@@ -5,3 +5,34 @@ var images=["06475c490af96ca45702b2b1295c1932","0835e5ed55f1f5290a9b615fcedf2256
     "9b89b221395c797ac7a09108ad048a7e","b5f0ac84498991d39342ec6373c69337","bae6fe7ce4996dcff587aacf9e083114",
     "d7917f67ae62a9b8f5d3a3bb207aac47"]
 
+function showBigPicture(){
+    var thumbs=document.getElementById("thumbs");
+    var placeWidth=document.getElementsByClassName("slider")[0].clientWidth;
+    var count=Math.round(placeWidth/(130+20));
+    for (var i=0;i<count;i++){
+        var div=document.createElement("div");
+        div.className="thumb";
+        var a=document.createElement("a");
+        a.style.display="block";
+        a.href="#";
+        var z=images[i];
+        a.id=z;
+        a.onclick=function(){
+                setBigImg(this.id);
+        };
+        var img=document.createElement("img");
+        img.src="images/thumbs/"+images[i]+"_sm.jpg";
+        //img.onerror=alert('No image found');
+        if (i==(count-1)) {
+            div.style.marginRight="";
+        }
+        a.appendChild(img);
+        div.appendChild(a);
+        thumbs.appendChild(div);
+    }
+}
+
+function setBigImg(src){
+    place=document.getElementById("place");
+    place.src="images/"+src+".jpg";
+}
