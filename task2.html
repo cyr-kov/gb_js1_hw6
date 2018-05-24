@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Task2</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                </tr>
+            </thead>
+            <tbody id="basket">
+            </tbody>
+            <tfoot>
+                <td >Итого:</td>
+                <td id="sum">0</td>
+                <td id="quantity">0</td>
+            </tfoot>
+        </table>
+    </div>
+    <div id="good1" class="goods">
+        <div class="name1">Товар1</div>
+        <div class="price">1001</div>
+        <button onclick="addToBasket(1,1001)">Купить</button>
+    </div>
+    <div id="good2" class="goods">
+        <div class="name1">Товар2</div>
+        <div class="price">101</div>
+        <button onclick="addToBasket(2,101)">Купить</button>
+    </div>
+    <div id="good3" class="goods">
+        <div class="name1">Товар3</div>
+        <div class="price">11</div>
+        <button onclick="addToBasket(3,11)">Купить</button>
+    </div>
+    <script>
+        goods=["Товар1","Товар2","Товар3"];
+        function addToBasket(id,price){
+            var insertPoint=document.getElementById("basket");
+            var sumPlace=document.getElementById("sum");
+            var totalSum=parseInt(sumPlace.innerText)+price;
+            var insGoodTR=document.createElement("tr");
+            var insGoodName=document.createElement("td");
+            insGoodName.innerText=goods[id];
+            insGoodTR.appendChild(insGoodName);
+
+            var insGoodPrice=document.createElement("td");
+            insGoodPrice.innerText=goods[id];
+            insGoodTR.appendChild(insGoodPrice);
+            var insGoodQty=document.createElement("td");
+            insGoodQty.innerText=goods[id];
+            insGoodTR.appendChild(insGoodQty);
+            insertPoint.appendChild(insGoodTR);
+            sumPlace.innerText=totalSum;
+        }
+    </script>
+</body>
+</html>

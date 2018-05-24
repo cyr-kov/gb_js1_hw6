@@ -4,6 +4,7 @@ var images=["06475c490af96ca45702b2b1295c1932","0835e5ed55f1f5290a9b615fcedf2256
     "6872def1ad6f603710775dd5fa7ba8f9","852f248d31553419794eef4e6b034e8f","979331c7c968b6757eb05f4234d8e5ec",
     "9b89b221395c797ac7a09108ad048a7e","b5f0ac84498991d39342ec6373c69337","bae6fe7ce4996dcff587aacf9e083114",
     "d7917f67ae62a9b8f5d3a3bb207aac47"]
+var currentPicture=0;
 
 function showBigPicture(){
     var thumbs=document.getElementById("thumbs");
@@ -35,4 +36,22 @@ function showBigPicture(){
 function setBigImg(src){
     place=document.getElementById("place");
     place.src="images/"+src+".jpg";
+    currentPicture=images.indexOf(src);
+    console.log(images.indexOf(src));
+}
+
+function slideRight(){
+    if (currentPicture < images.length-1) {
+        currentPicture++;
+        place = document.getElementById("place");
+        place.src = "images/" + images[currentPicture] + ".jpg";
+    }
+}
+
+function slideLeft(){
+    if (currentPicture >0){
+        currentPicture--;
+        place=document.getElementById("place");
+        place.src="images/"+images[currentPicture]+".jpg";
+    }
 }
