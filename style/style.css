@@ -1,0 +1,22 @@
+.slider{
+    height:500px;
+    border:1px solid gray;
+}
+#leftArrow,#rightArrow{
+    background-image: url(../images/arrow-left.png);
+    background-size: 50px 300px;
+    background-position: -12px;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 50px;
+    background-color: rgba(128,128,128,0.5);
+}
+
+#leftArrow{
+    float:left;
+}
+
+#rightArrow{
+    transform:scaleX(-1);
+    float:right;
+}
